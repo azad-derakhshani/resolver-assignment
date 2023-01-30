@@ -1,5 +1,5 @@
 import {Builder, Capabilities, By, Key, until} from 'selenium-webdriver';
-import {BasePage} from "../BasePage";
+import {BasePage} from '../BasePage';
 
 export class QeIndexPage extends BasePage {
 
@@ -13,13 +13,15 @@ export class QeIndexPage extends BasePage {
     constructor() {
         super();
 
+        //Urls
+        this.url = 'QE-index.html';
+
         //Inputs
-        this.emailInput = this.driver.findElement(By.xpath(""));
-        this.passwordInput = this.driver.findElement(By.xpath(""));
+        this.emailInput = this.driver.findElement(By.id('inputEmail'));
+        this.passwordInput = this.driver.findElement(By.id('inputPassword'));
 
         //Buttons
-        this.loginButton = this.driver.findElement(By.xpath(""));
+        this.loginButton = this.driver.findElement(By.xpath('//button[text()="Sign in"]'));
     }
-
 
 }
