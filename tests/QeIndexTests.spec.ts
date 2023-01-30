@@ -1,4 +1,4 @@
-import {QeIndexPage} from "../pages/QeIndexPage";
+import {QeIndexPage} from "../pages/BasePage/QeIndexPage";
 let qeIndexPage = new QeIndexPage();
 
 beforeEach(async ({ }) => {

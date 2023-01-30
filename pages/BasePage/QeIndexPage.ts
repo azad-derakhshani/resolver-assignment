@@ -1,5 +1,5 @@
 import {Builder, Capabilities, By, Key, until} from 'selenium-webdriver';
-import {BasePage} from "./BasePage";
+import {BasePage} from "../BasePage";
 
 export class QeIndexPage extends BasePage {
 
