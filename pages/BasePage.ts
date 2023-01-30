@@ -3,6 +3,8 @@ import { Chance } from 'chance';
 
 export class BasePage {
 
+    url: string;
+
     //Tools
     driver: Builder;
     capabilities: Capabilities;
@@ -19,7 +21,7 @@ export class BasePage {
 
     async goTo() {
         await this.driver.manage().window().maximize();
-        await this.driver.get('QE-index.html');
+        await this.driver.get(this.url);
         await this.driver.manage().setTimeouts({implicit: 8 });
     }
 
