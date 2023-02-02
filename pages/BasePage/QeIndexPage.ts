@@ -58,4 +58,20 @@ export class QeIndexPage extends BasePage {
         this.randomPassword = this.chance.password();
     }
 
+    async checkPresenceOfElements() {
+        return this.emailAddressInput.isDisplayed() && this.passwordInput.isDisplayed() && this.loginButton.isDisplayed();
+    }
+
+    async enterEmailAddressAndPassword() {
+        this.emailAddressInput.clear();
+        this.emailAddressInput.sendKeys(this.randomEmailAddress);
+        this.passwordInput.clear();
+        this.passwordInput.sendKeys(this.randomPassword);
+    }
+
+    async clickOnLoginButton() {
+        await this.loginButton.click();
+    }
+
+    
 }
