@@ -88,6 +88,12 @@ export class QeIndexPage extends BasePage {
         await this.elementHasValue(this.listGroupItemsSecondBadge, 6)
     }
 
-    
+    async checkDropdownText() {
+        await this.elementHasText(this.testThreeDropdown, 'Option 1')
+    }
 
+    async selectTestThreeDropDownOption() {
+        await this.selectOptionFromDropdown(this.testThreeDropdown, 3);
+    }
+    
 }
