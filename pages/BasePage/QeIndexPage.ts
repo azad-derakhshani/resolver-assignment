@@ -117,4 +117,9 @@ export class QeIndexPage extends BasePage {
         await expect(this.testFiveButton).toBeDisabled();
     }
 
+    async checkCellValueInInTable() {
+        let cellValue = await this.getCellValueInTable(2, 2);
+        await expect(cellValue).toEqual('Ventosanzap');
+    }
+
 }
