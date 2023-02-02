@@ -104,4 +104,17 @@ export class QeIndexPage extends BasePage {
         await this.checkButtonStatus(this.testFourSecondButton, 'disabled');
     }
 
+    async waitAndClickButton() {
+        await this.testFiveButton.waitFor();
+        await this.testFiveButton.click();
+    }
+
+    async checkPresenceOfAlertAfterButtonClick() {
+        await expect(this.buttonClickSuccessMessage).toBeVisible();
+    }
+
+    async checkThatButtonIsDisabledAfterClick() {
+        await expect(this.testFiveButton).toBeDisabled();
+    }
+
 }
