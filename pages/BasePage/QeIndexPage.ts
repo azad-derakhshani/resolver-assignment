@@ -73,5 +73,21 @@ export class QeIndexPage extends BasePage {
         await this.loginButton.click();
     }
 
+    async checkPresenceOfValuesInListGroup() {
+        let numberOfListGroupItems = await this.listGroupItems.count();
+        for (let i = 0; i < numberOfListGroupItems; i++) {
+            await expect(this.listGroupItems.nth(i)).toBeVisible();
+        }
+    }
+
+    async checkTextOfSecondListItem() {
+        await this.elementHasText(this.listGroupItems.nth(1), 'List Item 2');
+    }
+
+    async checkBadgeValueOfSecondListItem() {
+        await this.elementHasValue(this.listGroupItemsSecondBadge, 6)
+    }
+
     
+
 }
