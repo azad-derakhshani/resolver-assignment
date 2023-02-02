@@ -1,4 +1,4 @@
-import {Builder, Capabilities, By, Key, until} from 'selenium-webdriver';
+import {Browser, Builder, By} from 'selenium-webdriver';
 import { Chance } from 'chance';
 
 export class BasePage {
@@ -7,16 +7,13 @@ export class BasePage {
 
     //Tools
     driver: Builder;
-    capabilities: Capabilities;
     chance: Chance;
 
     constructor() {
 
         //Tools
-        this.driver = new Builder().forBrowser('chrome').build();
-        this.capabilities = new Capabilities();
+        this.driver = new Builder().forBrowser(Browser.CHROME).build();
         this.chance = new Chance();
-
     }
 
     async goTo() {
