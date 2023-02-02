@@ -95,5 +95,13 @@ export class QeIndexPage extends BasePage {
     async selectTestThreeDropDownOption() {
         await this.selectOptionFromDropdown(this.testThreeDropdown, 3);
     }
-    
+
+    async checkThatFirstButtonIsEnabled() {
+        await this.checkButtonStatus(this.testFourFirstButton, 'enabled');
+    }
+
+    async checkThatSecondButtonIsDisabled() {
+        await this.checkButtonStatus(this.testFourSecondButton, 'disabled');
+    }
+
 }
